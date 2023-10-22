@@ -21,7 +21,7 @@ class Register:
         self.var_cpwd=StringVar()
         self.var_check=IntVar()
 
-        self.bg=ImageTk.PhotoImage(file=r"C:\Users\Muhammad Waseem\Documents\Python_Test_Projects\Images_GUI\bgReg.jpg")
+        self.bg=ImageTk.PhotoImage(file=r"Images_GUI/bgReg.jpg")
         
         lb1_bg=Label(self.root,image=self.bg)
         lb1_bg.place(x=0,y=0, relwidth=1,relheight=1)
@@ -30,7 +30,7 @@ class Register:
         frame.place(x=100,y=80,width=900,height=580)
         
 
-        # img1=Image.open(r"C:\Users\Muhammad Waseem\Documents\Python_Test_Projects\Images_GUI\reg1.png")
+        # img1=Image.open(r"Images_GUI/reg1.png")
         # img1=img1.resize((450,100),Image.ANTIALIAS)
         # self.photoimage1=ImageTk.PhotoImage(img1)
         # lb1img1 = Label(image=self.photoimage1,bg="#F2F2F2")
@@ -142,7 +142,7 @@ class Register:
         else:
             # messagebox.showinfo("Successfully","Successfully Register!")
             try:
-                conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3307)
+                conn = mysql.connector.connect(host="localhost",user="root",password="",database='face_recognition')
                 mycursor = conn.cursor()
                 query=("select * from regteach where email=%s")
                 value=(self.var_email.get(),)
